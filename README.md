@@ -6,4 +6,4 @@ http://imas.gamedbs.jp/cg/
 
 デレステのカードにはまだ未対応ですが、現時点で合計4405枚のカードが入手できます。
 
-<img src="./images/eg.png">
+<img src="./images/eg.jpg">
