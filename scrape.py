@@ -21,8 +21,8 @@ def save_images(url, dst_dir):
     page_title = soup.find('title').string
     idol_name, _ = page_title.split(' | ')
 
-    dst_dir_ = os.path.join(dst_dir, idol_name)
-    os.makedirs(dst_dir_, exist_ok=True)
+    _dst_dir = os.path.join(dst_dir, idol_name)
+    os.makedirs(_dst_dir, exist_ok=True)
 
     # 画像のurlを取得していく
     index = 0
@@ -35,8 +35,7 @@ def save_images(url, dst_dir):
             if ext == '.jpg':
                 try:
                     if not image_title in image_titles:
-                        dst_path = os.path.join(dst_dir_, "{0}.jpg".format(index))
-                        dst_path = dst_path.replace(os.sep, '/')
+                        dst_path = os.path.join(_dst_dir, "{0}.jpg".format(index))
                         index += 1
                         print(origin + image_url)
                         urllib.request.urlretrieve(origin + image_url, dst_path)
@@ -47,8 +46,7 @@ def save_images(url, dst_dir):
 
 
 def main():
-        dst_dir = "./data"
-
+        dst_dir = "./cinderella"
         for i in range(200):
             url = origin + "cg/idol/detail/{}".format(i)
             save_images(url, dst_dir)
